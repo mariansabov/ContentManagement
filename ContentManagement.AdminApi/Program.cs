@@ -1,4 +1,5 @@
 using ContentManagement.AdminApi.Extensions;
+using ContentManagement.Application.Features.Announcements;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -9,6 +10,13 @@ var configuration = builder.Configuration;
 builder.Services.AddDatabase(configuration);
 
 builder.Services.AddControllers();
+
+// ------------------------
+// MediatR
+// ------------------------
+builder.Services.AddMediatR(cfg =>
+    cfg.RegisterServicesFromAssembly(typeof(CreateAnnouncementCommand).Assembly));
+
 // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
 builder.Services.AddOpenApi();
 

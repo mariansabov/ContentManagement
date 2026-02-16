@@ -27,4 +27,8 @@
     <ProjectReference Include="..\ContentManagement.Infrastructure\ContentManagement.Infrastructure.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Controllers\" />
+  </ItemGroup>
+
 </Project>
