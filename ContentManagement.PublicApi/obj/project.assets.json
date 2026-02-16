@@ -41,7 +41,7 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v10.0",
         "dependencies": {
-          "ContentManagement.ContentApi": "1.0.0"
+          "ContentManagement.Domain": "1.0.0"
         },
         "compile": {
           "bin/placeholder/ContentManagement.Application.dll": {}
@@ -50,21 +50,28 @@
           "bin/placeholder/ContentManagement.Application.dll": {}
         }
       },
-      "ContentManagement.ContentApi/1.0.0": {
+      "ContentManagement.Domain/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v10.0",
+        "compile": {
+          "bin/placeholder/ContentManagement.Domain.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/ContentManagement.Domain.dll": {}
+        }
+      },
+      "ContentManagement.Infrastructure/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v10.0",
         "dependencies": {
-          "Microsoft.AspNetCore.OpenApi": "10.0.3"
+          "ContentManagement.Application": "1.0.0"
         },
         "compile": {
-          "bin/placeholder/ContentManagement.ContentApi.dll": {}
+          "bin/placeholder/ContentManagement.Infrastructure.dll": {}
         },
         "runtime": {
-          "bin/placeholder/ContentManagement.ContentApi.dll": {}
-        },
-        "frameworkReferences": [
-          "Microsoft.AspNetCore.App"
-        ]
+          "bin/placeholder/ContentManagement.Infrastructure.dll": {}
+        }
       }
     }
   },
@@ -110,15 +117,22 @@
       "path": "../ContentManagement.Application/ContentManagement.Application.csproj",
       "msbuildProject": "../ContentManagement.Application/ContentManagement.Application.csproj"
     },
-    "ContentManagement.ContentApi/1.0.0": {
+    "ContentManagement.Domain/1.0.0": {
       "type": "project",
-      "path": "../ContentManagement.ContentApi/ContentManagement.ContentApi.csproj",
-      "msbuildProject": "../ContentManagement.ContentApi/ContentManagement.ContentApi.csproj"
+      "path": "../ContentManagement.Domain/ContentManagement.Domain.csproj",
+      "msbuildProject": "../ContentManagement.Domain/ContentManagement.Domain.csproj"
+    },
+    "ContentManagement.Infrastructure/1.0.0": {
+      "type": "project",
+      "path": "../ContentManagement.Infrastructure/ContentManagement.Infrastructure.csproj",
+      "msbuildProject": "../ContentManagement.Infrastructure/ContentManagement.Infrastructure.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net10.0": [
       "ContentManagement.Application >= 1.0.0",
+      "ContentManagement.Domain >= 1.0.0",
+      "ContentManagement.Infrastructure >= 1.0.0",
       "Microsoft.AspNetCore.OpenApi >= 10.0.3"
     ]
   },
@@ -156,6 +170,12 @@
           "projectReferences": {
             "C:\\Users\\Yomu\\source\\repos\\ContentManagement\\ContentManagement.Application\\ContentManagement.Application.csproj": {
               "projectPath": "C:\\Users\\Yomu\\source\\repos\\ContentManagement\\ContentManagement.Application\\ContentManagement.Application.csproj"
+            },
+            "C:\\Users\\Yomu\\source\\repos\\ContentManagement\\ContentManagement.Domain\\ContentManagement.Domain.csproj": {
+              "projectPath": "C:\\Users\\Yomu\\source\\repos\\ContentManagement\\ContentManagement.Domain\\ContentManagement.Domain.csproj"
+            },
+            "C:\\Users\\Yomu\\source\\repos\\ContentManagement\\ContentManagement.Infrastructure\\ContentManagement.Infrastructure.csproj": {
+              "projectPath": "C:\\Users\\Yomu\\source\\repos\\ContentManagement\\ContentManagement.Infrastructure\\ContentManagement.Infrastructure.csproj"
             }
           }
         }
