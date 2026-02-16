@@ -1,4 +1,8 @@
 <Solution>
+  <Project Path="ContentManagement.AdminApi/ContentManagement.AdminApi.csproj" />
+  <Project Path="ContentManagement.Application/ContentManagement.Application.csproj" />
   <Project Path="ContentManagement.ContentApi/ContentManagement.ContentApi.csproj" />
+  <Project Path="ContentManagement.Domain/ContentManagement.Domain.csproj" />
+  <Project Path="ContentManagement.Infrastructure/ContentManagement.Infrastructure.csproj" />
   <Project Path="ContentManagement.PublicApi/ContentManagement.PublicApi.csproj" />
 </Solution>
