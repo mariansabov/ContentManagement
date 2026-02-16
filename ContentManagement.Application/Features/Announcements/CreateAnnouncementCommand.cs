@@ -15,11 +15,15 @@ namespace ContentManagement.Application.Features.Announcements
     {
         public async Task<Guid> Handle(CreateAnnouncementCommand request, CancellationToken cancellationToken)
         {
+            var now = DateTime.UtcNow;
+
             var announcementEntity = new Announcement
             {
                 Title = request.Title,
                 Content = request.Content,
                 HoursToLive = request.HoursToLive,
+                CreatedAt = now,
+                ExpiresAt = now.AddHours(request.HoursToLive),
                 AuthorId = request.AuthorId
             };
 
