@@ -1,10 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace ContentManagement.Domain.Common
+﻿namespace ContentManagement.Domain.Common
 {
-    internal class BaseEntity
+    public class BaseEntity : IEntity
     {
+        public Guid Id { get; set; }
     }
 }

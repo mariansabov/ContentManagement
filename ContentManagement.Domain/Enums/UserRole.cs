@@ -1,10 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace ContentManagement.Domain.Enums
+﻿namespace ContentManagement.Domain.Enums
 {
-    internal class UserRole
+    public enum UserRole
     {
+        Author = 0,
+        Admin = 1
     }
 }

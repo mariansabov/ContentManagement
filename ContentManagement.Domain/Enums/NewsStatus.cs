@@ -1,10 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace ContentManagement.Domain.Enums
+﻿namespace ContentManagement.Domain.Enums
 {
-    internal class NewsStatus
+    public enum NewsStatus
     {
+        Draft = 0,
+        Published = 1
     }
 }

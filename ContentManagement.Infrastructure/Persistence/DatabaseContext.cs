@@ -1,10 +1,11 @@
-﻿
+﻿using ContentManagement.Application.Common.Interfaces;
 using ContentManagement.Domain.Entities;
+using ContentManagement.Infrastructure.Configurations;
 using Microsoft.EntityFrameworkCore;
 
 namespace ContentManagement.Infrastructure.Persistence
 {
-    public class DatabaseContext(DbContextOptions<DatabaseContext> options) : DbContext(options)
+    public class DatabaseContext(DbContextOptions<DatabaseContext> options) : DbContext(options), IApplicationDatabaseContext
     {
         public DbSet<User> Users { get; set; }
 
@@ -14,18 +15,11 @@ namespace ContentManagement.Infrastructure.Persistence
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            var configurationAssembly = typeof(AnnouncementConfiguration).Assembly;
+
+            modelBuilder.ApplyConfigurationsFromAssembly(configurationAssembly);
+
             base.OnModelCreating(modelBuilder);
-            // Configure relationships and constraints if needed
-            modelBuilder.Entity<News>()
-                .HasOne(n => n.Author)
-                .WithMany()
-                .HasForeignKey(n => n.AuthorId)
-                .OnDelete(DeleteBehavior.Cascade);
-            modelBuilder.Entity<Announcement>()
-                .HasOne(a => a.Author)
-                .WithMany()
-                .HasForeignKey(a => a.AuthorId)
-                .OnDelete(DeleteBehavior.Cascade);
         }
     }
 }
