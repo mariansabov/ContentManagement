@@ -1,5 +1,8 @@
 using ContentManagement.AdminApi.Extensions;
+using ContentManagement.Application.Common.Mappings;
 using ContentManagement.Application.Features.Announcements;
+using ContentManagement.Infrastructure.Persistence;
+using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -16,6 +19,8 @@ builder.Services.AddControllers();
 // ------------------------
 builder.Services.AddMediatR(cfg =>
     cfg.RegisterServicesFromAssembly(typeof(CreateAnnouncementCommand).Assembly));
+
+builder.Services.AddAutoMapper(cfg => { }, typeof(AnnouncementProfile).Assembly);
 
 // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
 builder.Services.AddOpenApi();
@@ -36,5 +41,11 @@ app.UseHttpsRedirection();
 app.UseAuthorization();
 
 app.MapControllers();
+
+using var scope = app.Services.CreateScope();
+var context = scope.ServiceProvider.GetRequiredService<DatabaseContext>();
+
+context.Database.Migrate();
+context.Seed();
 
 app.Run();

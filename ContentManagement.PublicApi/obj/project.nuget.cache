@@ -1,10 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "qsz4fO++Ihg=",
+  "dgSpecHash": "VWqHht9t9gU=",
   "success": true,
   "projectFilePath": "C:\\Users\\Yomu\\source\\repos\\ContentManagement\\ContentManagement.PublicApi\\ContentManagement.PublicApi.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Yomu\\.nuget\\packages\\automapper\\16.0.0\\automapper.16.0.0.nupkg.sha512",
+    "C:\\Users\\Yomu\\.nuget\\packages\\bcrypt.net-next\\4.1.0\\bcrypt.net-next.4.1.0.nupkg.sha512",
     "C:\\Users\\Yomu\\.nuget\\packages\\fluentvalidation\\12.1.1\\fluentvalidation.12.1.1.nupkg.sha512",
     "C:\\Users\\Yomu\\.nuget\\packages\\mediatr\\14.0.0\\mediatr.14.0.0.nupkg.sha512",
     "C:\\Users\\Yomu\\.nuget\\packages\\mediatr.contracts\\2.0.1\\mediatr.contracts.2.0.1.nupkg.sha512",

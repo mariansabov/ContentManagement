@@ -4,15 +4,18 @@
     "Projects": [
       {
         "Path": "ContentManagement.PublicApi\\ContentManagement.PublicApi.csproj",
-        "Action": "Start"
+        "Action": "Start",
+        "DebugTarget": "http"
       },
       {
         "Path": "ContentManagement.ContentApi\\ContentManagement.ContentApi.csproj",
-        "Action": "Start"
+        "Action": "Start",
+        "DebugTarget": "http"
       },
       {
         "Path": "ContentManagement.AdminApi\\ContentManagement.AdminApi.csproj",
-        "Action": "Start"
+        "Action": "Start",
+        "DebugTarget": "http"
       }
     ]
   }

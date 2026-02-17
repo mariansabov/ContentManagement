@@ -1,3 +1,5 @@
+using AutoMapper;
+using ContentManagement.Application.Common.Mappings;
 using ContentManagement.Application.Features.Announcements;
 using ContentManagement.ContentApi.Extensions;
 
@@ -16,6 +18,8 @@ builder.Services.AddControllers();
 // ------------------------
 builder.Services.AddMediatR(cfg =>
     cfg.RegisterServicesFromAssembly(typeof(CreateAnnouncementCommand).Assembly));
+
+builder.Services.AddAutoMapper(cfg => { }, typeof(AnnouncementProfile).Assembly);
 
 // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
 builder.Services.AddOpenApi();

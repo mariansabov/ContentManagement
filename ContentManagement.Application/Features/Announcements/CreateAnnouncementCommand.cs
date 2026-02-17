@@ -1,6 +1,5 @@
 ﻿using ContentManagement.Application.Common.Interfaces;
 using ContentManagement.Domain.Entities;
-using ContentManagement.Application.Features.Announcements.Dto;
 using MediatR;
 
 namespace ContentManagement.Application.Features.Announcements
